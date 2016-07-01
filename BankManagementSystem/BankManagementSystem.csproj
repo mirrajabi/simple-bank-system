@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BankManagementSystem</RootNamespace>
     <AssemblyName>BankManagementSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,14 +47,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Data\DbHandler.cs" />
+    <Compile Include="Data\DbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Enums.cs" />
+    <Compile Include="Utility\Utils.cs" />
+    <Compile Include="Views\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Deposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Deposit.Designer.cs">
+      <DependentUpon>Deposit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Modify.Designer.cs">
+      <DependentUpon>Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Remove.Designer.cs">
+      <DependentUpon>Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Transfer.Designer.cs">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Withdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Withdraw.Designer.cs">
+      <DependentUpon>Withdraw.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +108,29 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Deposit.resx">
+      <DependentUpon>Deposit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Modify.resx">
+      <DependentUpon>Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Remove.resx">
+      <DependentUpon>Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Transfer.resx">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Withdraw.resx">
+      <DependentUpon>Withdraw.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +144,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
